@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Real-time Task Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+    
+    <div class="notification" id="notification"></div>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tasks"></i>
+                    <span>TaskFlow</span>
+                </div>
+                <div class="user-info">
+                    <span id="username">User</span>
+                    <div class="user-avatar">U</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="dashboard">
+            <aside class="sidebar">
+                <h3>Dashboard</h3>
+                <div class="menu">
+                    <div class="menu-item active">
+                        <i class="fas fa-list"></i>
+                        <span>All Tasks</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-star"></i>
+                        <span>Important</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Today</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Completed</span>
+                    </div>
+                    <div class="menu-item">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Overdue</span>
+                    </div>
+                </div>
+            </aside>
+            
+            <section class="task-container">
+                <div class="task-header">
+                    <h2>All Tasks</h2>
+                    <div class="task-actions">
+                        <button class="btn btn-primary" id="addTaskBtn">
+                            <i class="fas fa-plus"></i> Add Task
+                        </button>
+                        <button class="btn btn-outline" id="refreshBtn">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                </div>
+                
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <label for="taskTitle">Task Title</label>
+                        <input type="text" id="taskTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDescription">Description</label>
+                        <textarea id="taskDescription"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="taskDueDate">Due Date</label>
+                        <input type="date" id="taskDueDate">
+                    </div>
+                    <input type="hidden" id="taskId">
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="saveTaskBtn">Save Task</button>
+                    </div>
+                </form>
+                
+                <div class="task-filters">
+                    <div class="filter active" data-filter="all">All</div>
+                    <div class="filter" data-filter="active">Active</div>
+                    <div class="filter" data-filter="completed">Completed</div>
+                </div>
+                
+                <div class="task-list" id="taskList">
+                    <!-- Tasks will be rendered here -->
+                </div>
+                
+                <div class="task-empty" id="emptyState" style="display: none;">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>No tasks found.</p>
+                    <p>Click "Add Task" to create your first task!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>
