@@ -39,7 +39,7 @@ TaskFlow is a modern, responsive web application for efficient task management w
    npm run dev
    ```
 
-4. Access the application at http://localhost:8888
+4. Access the application at http://localhost:3000
 
 ## 🔍 Future Enhancements
 
