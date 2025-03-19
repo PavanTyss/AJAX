@@ -63,7 +63,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📬 Contact
 
-If you have any questions or suggestions, please open an issue or contact the repository owner.
+If you have any questions or suggestions, please feel free to contact.
 
 ---
 
